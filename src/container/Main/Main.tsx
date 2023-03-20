@@ -1,21 +1,7 @@
 import First from 'components/FirstExercise/First'
 import Second from 'components/SecondExercise/Second'
-import { useState } from 'react'
-
-type CountData = {
-    countClick: number
-}
 
 const Main = () => {
-    const [countData, setCountData] = useState<CountData>({
-        countClick: 0,
-    })
-    const changeCountButton = (count: number) => {
-        setCountData((prevState: CountData) => ({
-            countClick: prevState.countClick + count,
-        }))
-    }
-
     return (
         <div
             style={{
@@ -32,10 +18,7 @@ const Main = () => {
             >
                 First exercise
             </div>
-            <First
-                countData={countData}
-                changeCountButton={changeCountButton}
-            />
+            <First />
             <div
                 style={{
                     marginBottom: '20px',

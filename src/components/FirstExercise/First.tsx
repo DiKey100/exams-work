@@ -1,18 +1,6 @@
-import { useState } from 'react'
+import CountBttn from './CountBttn/CountBttn'
 
-type Props = {
-    countData: {
-        countClick: number
-    }
-    changeCountButton: (count: number) => void
-}
-
-const First = ({ countData, changeCountButton }: Props) => {
-    const [count, setCount] = useState<number>(0)
-    const changeCount = () => {
-        setCount((prevState: number) => prevState + 1)
-    }
-
+const First = () => {
     return (
         <div
             style={{
@@ -23,33 +11,9 @@ const First = ({ countData, changeCountButton }: Props) => {
                 marginBottom: '50px',
             }}
         >
-            <button
-                style={{
-                    border: '1px solid black',
-                    color: 'black',
-                }}
-                onClick={changeCount}
-            >
-                change count ({count})
-            </button>
-            <button
-                style={{
-                    border: '1px solid black',
-                    color: 'black',
-                }}
-                onClick={changeCount}
-            >
-                change count ({count})
-            </button>
-            <button
-                style={{
-                    border: '1px solid black',
-                    color: 'black',
-                }}
-                onClick={changeCount}
-            >
-                change count ({count})
-            </button>
+            <CountBttn />
+            <CountBttn />
+            <CountBttn />
         </div>
     )
 }
